@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Zen Old Mincho Regular';
+  src: url('http://localhost:3000/Zen_Old_Mincho/ZenOldMincho-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Zen Old Mincho Bold';
+  src: url('http://localhost:3000/Zen_Old_Mincho/ZenOldMincho-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+*,html,body{
+  font-family: 'Zen Old Mincho Regular', serif;
+}
+
+.bold,b,strong{
+  font-family: 'Zen Old Mincho Bold', serif;
+}

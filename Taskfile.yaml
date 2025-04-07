@@ -1,0 +1,38 @@
+version: "3"
+
+tasks:
+  init:
+    cmds:
+      - "bash shell/copy.sh"
+      - "task run"
+
+  run:
+    desc: "ローカルサーバー起動"
+    cmds:
+      - "task bundle-js &"
+      - "task bundle-css &"
+      - "npx @11ty/eleventy --serve --port 3000 &"
+      - "sleep 3"
+      - "open http://localhost:3000"
+
+  bundle-css:
+    desc: "CSSバンドル"
+    cmds:
+      - "npx esbuild src/style.css \
+        --bundle \
+        --minify \
+        --outfile=dist/style.css \
+        --watch"
+
+  bundle-js:
+    desc: "JSバンドル"
+    cmds:
+      - "npx esbuild src/script.js \
+        --bundle \
+        --outfile=dist/script.js \
+        --platform=browser \
+        --watch"
+
+  npm:
+    cmds:
+      - "npm install"
